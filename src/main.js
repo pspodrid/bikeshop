@@ -1,4 +1,4 @@
-// import {Placeholder} from './back.js';
+// import {BikeService} from './back.js';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
@@ -12,14 +12,18 @@ $(document).ready(function() {
     $('#color').val("");
     const manufacturer = $('#manufacturer').val();
     $('#manufacturer').val("");
-    console.log(city);
-    console.log(color);
-    console.log(manufacturer);
+
+    fetch(`http://bikeindex.org/api/v3/search/count?distance=${city}&color=${color}&manufacturer=${manufacturer}`)
+      .then(function(response) {
+        return response.json();
+      })
+      .then(function(jsonifiedResponse) {
+        getElements(jsonifiedResponse);
+      });
 
 
-   // const getElements = function(response) {
-   //    $('.showHumidity').text(`The humidity in ${city} is ${response.main.humidity}%`);
-   //    $('.showTemp').text(`The temperature in Kelvins is ${response.main.temp} degrees.`);
-    // }
+   const getElements = function(response) {
+      $('.showNumber').text(`The number of stolen bikes is ${response.proximity}`);
+    };
   });
 });

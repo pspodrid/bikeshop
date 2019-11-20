@@ -1,5 +1,9 @@
-// export class WeatherService {
-//   fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=[[API-KEY-GOES-HERE]]`)
+// export class BikeService {
+//   constructor(test) {
+//     this.test = test,
+//   };
+//
+//   fetch(`http://bikeindex.org/api/v3/search/count?location=${city}&color=${color}&manufacturer=${manufacturer}`)
 //     .then(function(response) {
 //       return response.json();
 //     })
