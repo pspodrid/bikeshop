@@ -20,7 +20,11 @@ $(document).ready(function() {
     })();
 
    function getElements(response) {
-      $('.showNumber').text(`The number of stolen bikes is ${response.proximity}`);
-    };
+      $('.showNumber').text(`The number of stolen bikes that match your search is ${response.proximity}`);
+      $('.showTotal').text(`The total number of nonstolen bikes in your area is ${response.non}`);
+    }
+
+
+
   });
 });

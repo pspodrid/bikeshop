@@ -4,4 +4,6 @@ export class BikeService {
     let jsonifiedResponse = await response.json();
     return jsonifiedResponse;
   }
+
+
 }
