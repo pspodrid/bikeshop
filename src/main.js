@@ -2,8 +2,8 @@ import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
 import $ from 'jquery';
-// import { BikeService } from './back.js';
-import {apiCall} from './back.js';
+import { BikeService } from './back.js';
+
 $(document).ready(function() {
   $('#number').click(function() {
     const city = $('#location').val();
@@ -13,16 +13,13 @@ $(document).ready(function() {
     const manufacturer = $('#manufacturer').val();
     $('#manufacturer').val("");
 
-    fetch(`http://bikeindex.org/api/v3/search/count?distance=${city}&color=${color}&manufacturer=${manufacturer}`)
-      .then(function(response) {
-        return response.json();
-      })
-      .then(function(jsonifiedResponse) {
-        getElements(jsonifiedResponse);
-      });
+    (async () => {
+      let bikeService = new BikeService();
+      const response = await bikeService.apiCall(city,color,manufacturer);
+      getElements(response);
+    })();
 
-
-   const getElements = function(response) {
+   function getElements(response) {
       $('.showNumber').text(`The number of stolen bikes is ${response.proximity}`);
     };
   });
