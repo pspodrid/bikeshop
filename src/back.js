@@ -1,11 +1,9 @@
-export class Placeholder {
-  constructor(para1, para2, para3) {
-    this.para1 = para1;
-    this.para2 = para2;
-    this.para3 = para3;
-  }
-
-  protoName() {
-    let variableScopedToMethod = 0;
-  }
-}
+// export class WeatherService {
+//   fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=[[API-KEY-GOES-HERE]]`)
+//     .then(function(response) {
+//       return response.json();
+//     })
+//     .then(function(jsonifiedResponse) {
+//       getElements(jsonifiedResponse);
+//     });
+// }

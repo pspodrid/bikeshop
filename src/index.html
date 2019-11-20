@@ -1,10 +1,21 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html>
   <head>
-    <meta charset="utf-8">
-    <title></title>
+    <script type="text/javascript" src="main.js"></script>
+    <title>Bikes: Stolen?</title>
   </head>
   <body>
-
+    <div class="container">
+      <h1>See how many bikes are stolen in your area!</h1>
+      <label for="location">Enter a location:</label>
+      <input id="location" type="text">
+      <label for="color">Enter a color:</label>
+      <input id="color" type="text">
+      <label for="manufacturer">Enter a manufacturer:</label>
+      <input id="manufacturer" type="text">
+      <button class="btn-success" id="number">Get Number of stolen bikes!</button>
+      <div class="errors"></div>
+      <div class="showNumber"></div>
+      <!-- <div class="showTemp"></div> -->
+    </div>
   </body>
 </html>
