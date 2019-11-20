@@ -1,9 +1,9 @@
-// import {BikeService} from './back.js';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
 import $ from 'jquery';
-// import { WeatherService } from './../src/back.js';
+// import { BikeService } from './back.js';
+import {apiCall} from './back.js';
 $(document).ready(function() {
   $('#number').click(function() {
     const city = $('#location').val();
